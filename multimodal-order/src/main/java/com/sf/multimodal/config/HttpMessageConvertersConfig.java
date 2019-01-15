@@ -31,6 +31,9 @@ public class HttpMessageConvertersConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(HttpMessageConvertersConfig.class);
 
+    /**
+     * 返回页面json处理
+     */
     @Bean
     public HttpMessageConverters httpMessageConverters() {
         // 1.需要定义一个convert转换消息的对象;
@@ -60,9 +63,7 @@ public class HttpMessageConvertersConfig {
     }
 
     /**
-     * <p>Description: 接收参数日期格式处理</p>
-     *
-     * @author 01381782 funing on 2019-01-14 19:08:58
+     * 接受日期参数格式化处理
      */
     @Bean
     public Converter<String, Date> addNewConvert() {
