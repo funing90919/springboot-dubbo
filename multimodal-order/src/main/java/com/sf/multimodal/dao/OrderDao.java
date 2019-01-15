@@ -16,4 +16,6 @@ public interface OrderDao {
     List<OrderDO> findOrderList();
 
     OrderDO findOrderById(Integer id);
+
+    int insertOrder(OrderDO order);
 }

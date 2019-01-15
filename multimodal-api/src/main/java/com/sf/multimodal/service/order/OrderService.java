@@ -12,4 +12,6 @@ public interface OrderService {
     List<OrderDO> findOrderList();
 
     OrderDO findOrderById(Integer id);
+
+    Integer insertOrder(OrderDO order);
 }

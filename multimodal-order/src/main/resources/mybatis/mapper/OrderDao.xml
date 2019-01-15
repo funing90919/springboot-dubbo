@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sf.multimodal.dao.OrderDao">
+
+    <sql id="base_columns">
+        id,
+        order_no,
+        goods_id,
+        goods_name,
+        goods_num,
+        goods_num_unit,
+        unit_price,
+        total_amount,
+        discount_amount,
+        payment_amount,
+        order_time,
+        payment_time,
+        payment_status,
+        payment_cutoff_time,
+        created_by,
+        creation_time,
+        updated_by,
+        update_time
+    </sql>
+
     <select id="findOrderList" resultType="OrderDO">
         SELECT
-            *
+            <include refid="base_columns" />
         FROM
-            od_mem_order
+            sdo_order
     </select>
 
     <select id="findOrderById" parameterType="int" resultType="OrderDO">
         SELECT
-            *
+            <include refid="base_columns" />
         FROM
-            od_mem_order
+            sdo_order
         WHERE
-            order_id = #{id}
+            id = #{id}
     </select>
+
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="id" parameterType="OrderDO">
+        INSERT INTO
+          sdo_order (
+            order_no,
+            goods_id,
+            goods_name,
+            goods_num,
+            goods_num_unit,
+            unit_price,
+            total_amount,
+            discount_amount,
+            payment_amount,
+            order_time,
+            payment_time,
+            payment_status,
+            payment_cutoff_time,
+            created_by,
+            creation_time,
+            updated_by,
+            update_time
+          )
+          VALUES (
+            #{orderNo},
+            #{goodsId},
+            #{goodsName},
+            #{goodsNum},
+            #{goodsNumUnit},
+            #{unitPrice},
+            #{totalAmount},
+            #{discountAmount},
+            #{paymentAmount},
+            #{orderTime},
+            #{paymentTime},
+            #{paymentStatus},
+            #{paymentCutoffTime},
+            #{createdBy},
+            #{creationTime},
+            #{updatedBy},
+            #{updateTime}
+        )
+    </insert>
 </mapper>

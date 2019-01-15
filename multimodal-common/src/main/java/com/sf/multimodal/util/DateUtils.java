@@ -106,6 +106,17 @@ public class DateUtils {
         },
 
         /**
+         * 格式yyyy-MM-dd HH:mm，日期与字符串双向转
+         */
+        YYYY_MM_DD_HH_MM(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm", Locale.CHINA)) {
+            @Override
+            public Date parse(String text) {
+                LocalDate localDate = LocalDate.parse(text, dateTimeFormatter);
+                return Date.from(localDate.atStartOfDay(ZONE_ID).toInstant());
+            }
+        },
+
+        /**
          * 格式yyyy-MM-dd HH:mm:ss，日期与字符串双向转
          */
         YYYY_MM_DD_HH_MM_SS(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.CHINA)) {
@@ -216,5 +227,6 @@ public class DateUtils {
 
         public abstract Date parse(String text);
     }
+
 
 }
