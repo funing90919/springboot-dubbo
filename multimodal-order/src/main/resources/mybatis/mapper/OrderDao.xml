@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sf.multimodal.dao.OrderDao">
+    <select id="findOrderList" resultType="OrderDO">
+        SELECT
+            *
+        FROM
+            od_mem_order
+    </select>
+
+    <select id="findOrderById" parameterType="int" resultType="OrderDO">
+        SELECT
+            *
+        FROM
+            od_mem_order
+        WHERE
+            order_id = #{id}
+    </select>
+</mapper>
