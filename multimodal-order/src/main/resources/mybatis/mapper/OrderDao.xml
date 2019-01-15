@@ -23,7 +23,7 @@
         update_time
     </sql>
 
-    <select id="findOrderList" resultType="OrderDO">
+    <select id="findOrderList" parameterType="OrderDO" resultType="OrderDO">
         SELECT
             <include refid="base_columns" />
         FROM

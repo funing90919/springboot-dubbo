@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface OrderDao {
 
-    List<OrderDO> findOrderList();
+    List<OrderDO> findOrderList(OrderDO order);
 
     OrderDO findOrderById(Integer id);
 
