@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2019, sflink.com. All rights reserved.
- */
 package com.sf.multimodal.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
