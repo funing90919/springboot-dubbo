@@ -1,3 +1,4 @@
+/*
 package com.sf.multimodal.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -20,17 +21,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Jacky on 2019/1/15 11:23
- */
 @Configuration
 public class HttpMessageConvertersConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(HttpMessageConvertersConfig.class);
 
-    /**
-     * 返回页面json处理
-     */
     @Bean
     public HttpMessageConverters httpMessageConverters() {
         // 1.需要定义一个convert转换消息的对象;
@@ -59,9 +54,6 @@ public class HttpMessageConvertersConfig {
         return new HttpMessageConverters(converter);
     }
 
-    /**
-     * 接受日期参数格式化处理
-     */
     @Bean
     public Converter<String, Date> addNewConvert() {
         return new Converter<String, Date>() {
@@ -97,3 +89,4 @@ public class HttpMessageConvertersConfig {
         };
     }
 }
+*/
